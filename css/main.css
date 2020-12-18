@@ -1,0 +1,62 @@
+body {
+    background-image: url(../img/fon.jpg); /* Путь к фоновому рисунку */
+    background-position: left bottom; /* Положение фона */
+    background-repeat: repeat-y; /* Повторяем фон по горизонтали */
+
+    /*background-size: cover;*/
+}
+
+h1 {
+    text-align: center;
+}
+
+.titleText {
+    font-size: 700%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: yellow;
+}
+
+
+.fon1 {
+    margin-top: 50px;
+    width: 1400px;
+    margin: auto;
+    height: 1000px;
+}
+
+.block {
+    float: left;
+    width: 28%;
+    height: 90%;
+    background-color: khaki;
+
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 10px;
+
+    margin: 15% 2% 15% 3%;
+
+    text-align: center;
+    font-family: monospace;
+    font-size: 600%;
+    color:#ff1493;
+}
+
+.button_sett {
+    background-image: url(../img/flicker_button_on.png);
+    width: 65px;
+    height: 65px;
+    color: red;
+}
+
+
+
+.footer {
+    text-align: center;
+    font-size: 120%;
+    margin: auto;
+    width: 1300px;
+    height: 30px;
+    background-color: rgb(133, 219, 215);
+    margin-top: 11%;
+}
