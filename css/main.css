@@ -49,6 +49,36 @@ h1 {
     color: red;
 }
 
+.column_title {
+    border-radius: 15px;
+    margin: 1%;
+    background-color: rgb(243, 223, 41);
+}
+.column_desc {
+    word-break: break-all;
+    color: black;
+    font-size: 50%;
+    padding: 3%;
+    padding-top: 0%;
+    border-radius: 15px;
+    margin: 1%;
+    margin-top: 15%;
+    background-color: rgb(243, 223, 41);
+}
+
+.button_play {
+    color:black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 1px;
+    margin: 3%;
+    margin-top: 15%;
+    background-color: rgb(6, 49, 241);
+}
+
+.button_play:hover {
+    background: rgb(80, 109, 235);
+}
+
 
 
 .footer {
