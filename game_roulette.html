@@ -26,10 +26,28 @@
         <div class="button_start" onclick="start();">
             СТАРТ
         </div>
+
+        <div class="bal_viewer" id="bal">Ваш баланс: 100</div>
+
+        <div class="slider">
+            <input type="range" id="bid" name="cowbell" 
+                min="0" max="100" value="20" step="1" onclick="bidOutReview();" onmousemove="bidOutReview();">
+            <label for="cowbell" id="bid_out">Ставка - 20</label>
+        </div>
+
+        <div class="radio">
+            <input class="inputText" id="color_red" type="radio" name="color" value="red" checked/>
+            <label for="color_red">Красный</label>
+            <input class="inputText" id="color_black" type="radio" name="color" value="black"/>
+            <label for="color_black">Чёрный</label>
+        </div>
+        <!--
+        <input class="inputText" id="" type="radio" onclick="" value="Красный"/>
+        <input class="inputText" id="" type="radio" onclick="" value="Чёрный"/>-->
     </div>
 
     <div class="footer">
-        <p>© ThEVlaDGamE, 2020  | v.0.0.3  |  <a href="https://discord.gg/4ANzKyMmUY">Дискорд-сервер</a></p>
+        <p>© ThEVlaDGamE, 2020  | v.0.2.1  |  <a href="https://discord.gg/4ANzKyMmUY">Дискорд-сервер</a></p>
     </div>
 </body>
 

@@ -4,38 +4,61 @@ let counter;
 
 let interval;
 
-let ImgCardsURL = 'url("img/cards/image_part_")'
 
-function divMove() {
-    /*
-    setInterval(function () {
-        document.getElementById("card").style.left = position + "px";
+let balance = 100;
+let bid;
+let choosenColor = "red";
 
-        if (position > 1000) {
-            position = -10;
-        }
-        console.log(position);
 
-        position += 3;
-    }, 20);*/
-    
-    document.getElementById("card").remove();
-    var d = document.createElement('card');
-    /*d.style.width = 10 * position;
-    position++;*/
-    d.className = "card";
-    d.id = "card";
-    document.getElementById("fon").appendChild(d);
+
+
+function soundPlay(path) {
+    var audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = path; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
+}
+
+function bidOutReview() {
+    document.getElementById("bid_out").innerText = "Ставка - " + document.getElementById("bid").value;
 }
 
 function opacityCount(x, k, rate) {
     return (1 - rate * (Math.abs(x - k) / k) * (Math.abs(x - k) / k));
 }
 
+function reviewBalance() {
+    document.getElementById("bal").innerText = "Ваш баланс: " + balance;
+
+    let max_old = Number.parseInt(document.getElementById("bid").getAttribute('max'));
+    document.getElementById("bid").setAttribute('max', balance);
+
+    document.getElementById("bid").setAttribute('value', (balance / max_old) * Number.parseInt(document.getElementById("bid").getAttribute('value')));
+    bidOutReview();
+}
+
 function start() {
+    //Ставка
+
+    bid = Number.parseInt(document.getElementById("bid").value); 
+
+    if (Number.isNaN(bid)) {
+        bid = 0;
+    }
+
+    if (bid > balance) {
+        bid = balance;
+        document.getElementById("bid").value = balance;
+    }
+
+    balance -= bid;
+    reviewBalance();
+
+
+    //soundClick();
     position = [];
     move_speed = 15;
     counter = 0;
+    //choosenColor = "red";
     clearInterval(interval);
 
     for (let i = 0; i < 12; i++) {
@@ -58,14 +81,53 @@ function start() {
 
     }
     
+    if (document.getElementById("color_red").checked) {
+        choosenColor = "red";
+    } else if (document.getElementById("color_black").checked) {
+        choosenColor = "black";
+    }
+    /*
+    console.log(document.getElementById("color_black").value);
+    console.log(document.getElementById("color_black").getAttribute('checked'));
+    if (document.getElementById("color_red").value) {
+        choosenColor = "red";
+    } else if (document.getElementById("color_black").getAttribute('checked')) {
+        choosenColor = "black";
+    }*/
+
+    //alert(choosenColor);
+    
     interval = setInterval(function () {
         counter++;
 
         if (move_speed > 0) {
             move_speed -= (counter / 3000);
         } else {
+            //soundPlay('snd/win.mp3');
+
             move_speed = 0;
             clearInterval(interval);
+
+            document.getElementById("card" + 4).className = "card_choosen";
+
+            let number = document.getElementById("card" + 4).style.backgroundImage;
+            number = number.replace('url("img/cards/image_part_', '').replace('.jpg")', '').replace('00', '').replace('0', '');
+
+            number = Number.parseInt(number);
+
+            let result = "";
+            if (((number >= 1) && (number <= 13)) || ((number >= 27) && (number <= 39))) {
+                result = "red";
+            } else {
+                result = "black";
+            }
+
+            if (result == choosenColor) {
+                balance += bid * 2;
+            }
+
+            reviewBalance();
+            //console.log("." + number);
         }
 
         for (let i = 0; i < 12; i++) {
