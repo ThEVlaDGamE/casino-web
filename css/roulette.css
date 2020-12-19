@@ -2,8 +2,6 @@ body {
     background-image: url(../img/fon.jpg); /* Путь к фоновому рисунку */
     background-position: left bottom; /* Положение фона */
     background-repeat: repeat-y; /* Повторяем фон по горизонтали */
-
-    /*background-size: cover;*/
 }
 
 h1 {
@@ -25,56 +23,46 @@ h1 {
     height: 1000px;
 }
 
-.block {
-    float: left;
-    width: 28%;
-    height: 90%;
-    background-color: khaki;
 
-    border-radius: 15px;
-    box-shadow: 10px 10px 25px 10px;
-
-    margin: 15% 2% 15% 3%;
-
-    text-align: center;
-    font-family: monospace;
-    font-size: 600%;
-    color:#ff1493;
+.fon_movement {
+    background-color: rgb(163, 245, 153);
+    border-radius: 35px;
+    height: 200px;
+    width: 100%;
+    margin: auto;
 }
 
-.button_sett {
-    background-image: url(../img/flicker_button_on.png);
-    width: 65px;
-    height: 65px;
-    color: red;
-    border-radius: 515px;
-}
 
-.column_title {
-    border-radius: 15px;
+.card {
     margin: 1%;
-    background-color: rgb(243, 223, 41);
-}
-.column_desc {
-    word-break:keep-all;
-    color: black;
-    font-size: 40%;
-    padding: 3%;
-    padding-top: 0%;
-    border-radius: 15px;
-    margin: 1%;
-    margin-top: 15%;
-    background-color: rgb(243, 223, 41);
+    margin-top: 1.5%;
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 150px;
+    background-color: teal;
+    background-size: 100px 150px;
 }
 
-.button_play {
-    color:black;
+.button_start {
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
     border-radius: 15px;
     box-shadow: 10px 10px 25px 1px;
-    margin: 3%;
-    margin-top: 15%;
-    background-color: rgb(6, 49, 241);
+    background-color: turquoise;
+    text-align: center;
+    font-size: 500%;
+    color: blue;
 }
+.button_start:hover {
+    background-color: rgb(111, 230, 218);
+}
+
+
+
+
 
 .button_play:hover {
     background: rgb(80, 109, 235);
@@ -91,6 +79,25 @@ A.link_button_play {
 a:hover {
     color: yellow;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .footer {
