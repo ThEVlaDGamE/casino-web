@@ -32,9 +32,24 @@ function checkDefeat(points) {
 
 function returnPoints(array) {
     let points = 0;
+    let aces = 0;
+
     for (let i in array) {
         points += Number.parseInt(array[i].points);
+        if (array[i].isAce) {
+            aces++;
+        }
     }
+
+    if (points > 21) {
+        if (aces > 0) {
+            while (points > 21 && aces > 0) {
+                points -= 10;
+                aces--;
+            }
+        }
+    }
+
     return points;
 }
 
@@ -49,14 +64,14 @@ function reviewPoints() {
         dealer_points += Number.parseInt(dealer_cards[i].points);
     }*/
 
+    document.getElementById("dealer_points").innerText = "Карты диллера (" + dealer_points + " очков)";
+    document.getElementById("player_points").innerText = "Ваши карты (" + player_points + " очков)";
+
     checkDefeat(player_points);
 
     if (player_points == 21) {
         stand();
     }
-
-    document.getElementById("dealer_points").innerText = "Карты диллера (" + dealer_points + ")";
-    document.getElementById("player_points").innerText = "Ваши карты (" + player_points + ")";
 }
 
 function addCard(array) {
@@ -76,12 +91,15 @@ function addCard(array) {
     d.id = card_id + (array.length + 1);
     d.style.backgroundImage = returnRandomCard();
 
+    let isAce = false;
 
     let points = 0;
     let number = d.style.backgroundImage.replace('url("img/cards/image_part_', '').replace('.jpg")', '').replace('00', '').replace('0', '');
     
     
     if (number == 1 || number == 14 || number == 27 || number == 40) {
+        points = 11;
+        isAce = true;
         // Туз
     } else if (
         (number >= 2 && number <= 10) ||
@@ -114,7 +132,8 @@ function addCard(array) {
             end_position: (array.length) * 55 + 150,
             position: 0,
             movement: movement_intervales.length,
-            speed: ((array.length) * 55 + 150) / 38
+            speed: ((array.length) * 55 + 150) / 38,
+            isAce: isAce
         }
     );
 
@@ -176,6 +195,8 @@ function start() {
 
     document.getElementById('game_result_message').hidden = true;
     document.getElementById('fon_action_button').hidden = false;
+
+    reviewPoints();
     /*
     for (let i in movement_intervales) {
         clearInterval(movement_intervales[i]);
@@ -237,6 +258,8 @@ function end(result) {
     document.getElementById('game_result_message').style.backgroundColor = color;
     
     document.getElementById('fon_action_button').hidden = true;
+
+    reviewBalance();
 }
 
 
@@ -249,6 +272,14 @@ function stand() {
 
     while (returnPoints(dealer_cards) < 17) {
         addCard(dealer_cards);
+    }
+
+    if (returnPoints(dealer_cards) < returnPoints(player_cards)) {
+        let rnd = Math.random() * 100;
+
+        if (rnd <= 25) {
+            addCard(dealer_cards);
+        }
     }
 
     if (returnPoints(dealer_cards) <= 21) {
