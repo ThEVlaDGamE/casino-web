@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Казино - рулетка</title>
+
+    <link rel="stylesheet" href="css/blackjack.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <link rel="shortcut icon" href="img/icon.png">
+
+    <script src="js/blackjack.js"></script>
+</head>
+
+
+<body>
+    <div class="fon1" id="fon">
+        <div class="titleText">
+            Блэкджек
+        </div>
+
+        
+        <div class="table_text" id="dealer_points">Карты диллера (0)</div>
+        <div class="fon_movement" id="fon_dealer">
+            <div class="deck"></div>
+        </div>
+
+        <div class="table_text" id="player_points">Ваши карты (0)</div>
+        <div class="fon_movement" id="fon_player">
+            <div class="deck"></div>
+        </div>
+
+        <div class="fon_action_button" id="fon_action_button" hidden>
+            <div class="action_button" onclick="take_card();">Взять</div>
+            <div class="action_button" onclick="">Удвоить ставку</div>
+            <div class="action_button" onclick="stand();">Пас</div>
+        </div>
+        <div class="game_result_message" id="game_result_message" hidden>Вы победили!</div>
+        <div class="button_start" onclick="start();">
+            СТАРТ
+        </div>
+        
+
+        <div class="bal_viewer" id="bal">Ваш баланс: 100</div>
+
+        <div class="slider">
+            <input type="range" id="bid" name="cowbell" 
+                min="0" max="100" value="20" step="1" onclick="bidOutReview();" onmousemove="bidOutReview();">
+            <label for="cowbell" id="bid_out">Ставка: 20</label>
+        </div>
+    </div>
+
+    <div class="footer">
+        © ThEVlaDGamE, 2020  | v.0.2.2  |  <a href="https://discord.gg/4ANzKyMmUY">Дискорд-сервер</a>
+    </div>
+</body>
+
+
+</html>

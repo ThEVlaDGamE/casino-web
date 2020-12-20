@@ -1,0 +1,66 @@
+.block {
+    float: left;
+    width: 28%;
+    height: 90%;
+    background-color: khaki;
+
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 10px;
+
+    margin: 15% 2% 15% 3%;
+
+    text-align: center;
+    font-family: monospace;
+    font-size: 600%;
+    color:#ff1493;
+}
+
+.button_sett {
+    background-image: url(../img/flicker_button_on.png);
+    width: 65px;
+    height: 65px;
+    color: red;
+    border-radius: 515px;
+}
+
+.column_title {
+    border-radius: 15px;
+    margin: 1%;
+    background-color: rgb(243, 223, 41);
+}
+.column_desc {
+    word-break:keep-all;
+    color: black;
+    font-size: 40%;
+    padding: 3%;
+    padding-top: 0%;
+    border-radius: 15px;
+    margin: 1%;
+    margin-top: 15%;
+    background-color: rgb(243, 223, 41);
+}
+
+.button_play {
+    color:black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 1px;
+    margin: 3%;
+    margin-top: 15%;
+    background-color: rgb(6, 49, 241);
+}
+
+.button_play:hover {
+    background: rgb(80, 109, 235);
+}
+.button_play:active {
+    background: rgb(12, 25, 80);
+}
+
+A.link_button_play {
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: yellow;
+}

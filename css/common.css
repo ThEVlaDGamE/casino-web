@@ -1,0 +1,35 @@
+body {
+    background-image: url(../img/fon.jpg); /* Путь к фоновому рисунку */
+    background-position: left bottom; /* Положение фона */
+    background-repeat: repeat-y; /* Повторяем фон по горизонтали */
+
+    /*background-size: cover;*/
+}
+h1 {
+    text-align: center;
+}
+.titleText {
+    font-size: 700%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: yellow;
+}
+.fon1 {
+    margin-top: 50px;
+    width: 1400px;
+    margin: auto;
+    height: 1000px;
+}
+
+
+
+
+.footer {
+    text-align: center;
+    font-size: 120%;
+    margin: auto;
+    width: 1300px;
+    height: 30px;
+    background-color: rgb(133, 219, 215);
+    margin-top: 200px;
+}
