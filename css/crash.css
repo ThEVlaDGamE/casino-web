@@ -1,7 +1,7 @@
 .fon_movement {
     background-color: rgb(163, 245, 153);
     border-radius: 35px;
-    height: 200px;
+    height: 250px;
     width: 100%;
     margin: auto;
     padding-top: 50px;
@@ -12,13 +12,32 @@
     width: 300px;
     height: 100px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 15px;
     box-shadow: 10px 10px 20px 1px;
     background-color: green;
     text-align: center;
     font-size: 500%;
     vertical-align:middle;
+}
+
+.history_fon {
+    height: 50px;
+    width: 100%;
+}
+
+.coof_history {
+    display: inline;
+    width: 170px;
+    height: 40px;
+    margin: auto;
+    margin-left: 20px;
+    margin-top: -10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 1px;
+    background-color: green;
+    text-align: center;
+    font-size: 300%;
 }
 
 
