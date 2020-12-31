@@ -77,8 +77,6 @@ function start() {
         }
         coof_game_end = Math.round(coof_game_end);
 
-        console.log(coof_game_end);
-
         document.getElementById("button_start").innerText = "ЗАБРАТЬ";
         document.getElementById("coof_output").innerText = "1.00x";
 
