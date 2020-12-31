@@ -99,7 +99,7 @@ function start() {
                 document.getElementById("coof_output").innerText = text_coof;
 
                 if (need_ticks_to_tick > 3) {
-                    need_ticks_to_tick -= need_ticks_to_tick / 100;
+                    need_ticks_to_tick -= need_ticks_to_tick / 25;
                 }
 
                 if (coof >= coof_game_end) {
