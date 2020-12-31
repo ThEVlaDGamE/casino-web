@@ -1,0 +1,86 @@
+.fon_movement {
+    background-color: rgb(163, 245, 153);
+    border-radius: 35px;
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+
+.coof_output {
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px 1px;
+    background-color: green;
+    text-align: center;
+    font-size: 500%;
+    vertical-align:middle;
+}
+
+
+.button_start {
+    width: 350px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 1px;
+    background-color: turquoise;
+    text-align: center;
+    font-size: 500%;
+    color: blue;
+}
+.button_start:hover {
+    background-color: rgb(111, 230, 218);
+}
+.button_play:active {
+    background-color: rgb(25, 9, 83);
+}
+
+
+
+
+.bal_viewer {
+    font-family: fantasy;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    background-color: blue;
+    font-size: 40px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 1px;
+}
+
+
+.slider {
+    font-family: fantasy;
+    background-color: blueviolet;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px 1px;
+}
+
+.button_play:hover {
+    background: rgb(80, 109, 235);
+}
+.button_play:active {
+    background: rgb(12, 25, 80);
+}
+
+A.link_button_play {
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: yellow;
+}
