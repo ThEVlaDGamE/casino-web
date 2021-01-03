@@ -20,19 +20,19 @@ let sett_middle_coof = 30;
 function calculate_coof_game_end() {
     if (Math.random() * 100 <= sett_crash_chance) {
         // Краш
-        return Math.random() * 10;
+        return (Math.random() * 10 + 100);
     } else {
         // Игра
         let rnd = Math.random() * 100;
         if (rnd <= sett_little_coof) {
             // Маленькое - 1.10 - 2.00
-            return Math.random() * 90;
+            return (Math.random() * 90 + 110);
         } else if (rnd <= sett_middle_coof) {
             // Среднее - 2.00 - 5.00
-            return Math.random() * 300;
+            return (Math.random() * 300 + 200);
         } else {
             // Большое - 5.0+
-            return Math.random() * 500;
+            return (Math.random() * 500 + 500);
         }
     }
     
@@ -42,7 +42,7 @@ function calculate_coof_game_end() {
 
 function randomize_history() {
     for (let i = 1; i < 11; i++) {
-        let return_coof = Math.round(calculate_coof_game_end()) + 100;
+        let return_coof = Math.round(calculate_coof_game_end());
         let coof2 = return_coof / 100;
 
         if (coof2.toString().length == 1) {
@@ -132,7 +132,7 @@ function start() {
         reviewBalance();
 
         // Расчёт конечного коэфициента
-        coof_game_end = Math.round(calculate_coof_game_end() + 100);
+        coof_game_end = Math.round(calculate_coof_game_end());
 
         //console.log(coof_game_end);
 
